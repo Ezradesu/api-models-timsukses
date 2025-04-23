@@ -85,8 +85,14 @@ def home():
 
 
 # server
+# if __name__ == "__main__":
+#     port = 5000
+#     logger.info(f"Menjalankan API server pada port {port}")
+#     app.run(host='0.0.0.0', port=port, debug=False)
+
 if __name__ == "__main__":
-    port = 5000
+    import os
+    port = int(os.environ.get("PORT", 5000))
     logger.info(f"Menjalankan API server pada port {port}")
     app.run(host='0.0.0.0', port=port, debug=False)
 
